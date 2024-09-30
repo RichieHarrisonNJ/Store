@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+
+    <! version 1.0 0906 -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+<! ### WEB PAGE ###                                                                                                                 -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+
+<body style="background-color:#a56ca7">
+
+<h3 class="text-center">Richie's Sports Memorabilia and Collectibles (TEST version)</h3>
+<br>
+<label id="status"></label>
+
+<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+<div class="cc" >
+
+   <!------------------------------------------------------------------------------------------------------- -->
+   <! ### BUTTONS -->
+   <!------------------------------------------------------------------------------------------------------- -->
+   <div class="card card-body" style="background-color:#feeb10; padding:5px;">
+      <div class="dropdown">
+      <span class="text-nowrap bd-highlight font-weight-bolder">Selection:</span>
+      <button type= "button" class="btn border border-light btn-primary btn-all" onclick="getItem('01');">Cards</button>
+      <button type= "button" class="btn border border-light btn-primary btn-all" onclick="getItem('02');">Boxes</button>
+
+      </div>
+   </div>
+
+   <!------------------------------------------------------------------------------------------------------- -->
+   <! ### ITEM MAP GLASS MANUAL d-block w-100 width:700px; -->
+   <!------------------------------------------------------------------------------------------------------- -->
+
+   <div class="card card-body"  style="padding:5px;">   
+
+   <div class="row mr-auto container-fluid">
+
+       <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"      style="                                 padding:0px; margin:0px; border:5px solid #000000;">
+           <h2  id="titlePX" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Major League Baseball O Pee Chee 10 cards with bubble gum  - Graded Estimate ($65 to $220) - Asking $165 .jpg</h2>
+           <div id="scrolPX" class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
+           <img id="imagePX" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Major League Baseball O Pee Chee 10 cards with bubble gum  - Graded Estimate ($65 to $220) - Asking $165 .jpg" alt="Photo1" > 
+           </div>
+       </div>
+
+       <div class="mcol-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"    style="                                 padding:0px; margin:0px; border:5px solid #000000;" >
+           <h2  id="titleM" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >New York Yankees Upper Deck 8 cards one special edition - Graded Estimate ($50 to $200) - Asking $110.jpg<h2>
+           <div id="scrolM" class="scrolM   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
+           <img id="imageM" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/PXL_20240902_202254943.jpg" alt="Photo1" > 
+           </div>
+       </div>
+
+       <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"     style="                                 padding:0px; margin:0px; border:5px solid #000000;">
+           <h2  id="titleP" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >PXL_20240902_202254943.jpg
+<h2>
+           <div id="scrolP" class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
+           <img id="imageP" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/PXL_20240903_195950945.MP.jpg" alt="Photo1" > 
+           </div>
+       </div>
+
+    </div></div>
+
+    <div id="wrapper1" class="card card-body"  style="padding:5px;">
+
+    <div id="wrapper" class="card card-body"  style="padding:5px;">
+
+</div>
+
+
+   <!------------------------------------------------------------------------------------------------------- -->
+   <! ### FOOTER -->
+   <!------------------------------------------------------------------------------------------------------- -->
+   <div class="card card-body" style="background-color:#feeb10; padding:5px;">
+      <div class="text-center">
+                                                                                                   Website designed by 
+
+      <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.0)</a>
+      </div>
+   </div>
+
+<!------------------------------------------------------------------------------------------------------- -->
+</div></div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+var saveR = [];
+
+getItem();
+
+async function getItem() {
+
+
+  document.getElementById('status').innerHTML = 'Start get cards';
+
+  const api_url = "https://api.github.com/repos/JohnMeistrell/Richie/contents/imagesRichie/";
+  const response = await fetch(api_url);
+  let objvalue = await response.json();
+  console.log(objvalue);
+  saveR = objvalue;
+  console.log("done");
+
+  var codeBlock = ''; var colN = 0;
+
+  var E2row   = '<div class="row mr-auto container-fluid">';
+  var E3colA  =    '<div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid '
+  var E3colB  = '"             style="padding:0px; margin:0px; border:5px solid #000000;">';
+
+  var E4itemB =       '<h2  class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
+  var E4itemE =       '</h2>';
+
+  var E5scrol =       '<div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">'
+  var E6imagB =           '<img class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/'
+  var E6imagE =           '" alt="Photo1" > '
+  var E7divE  =       '</div>';
+
+  var E8divE  =    '</div>';
+
+  saveR.forEach( s => { 
+    console.log(s.name);
+    colN = colN + 1;
+    if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
+
+    var tagClass = '';
+    var nameArr = s.name.split('- Tag');
+    var trimTagX = nameArr[1];
+    if (trimTagX) {
+       var trimTagY = trimTagX.trim(); 
+       var tagArr = trimTagY.split('.');
+       tagClass = tagArr[0];
+    }
+
+    codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
+    codeBlock += tagClass;
+    codeBlock += E3colB;
+
+    codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
+    codeBlock += s.name;   /* Card heading */
+    codeBlock += E4itemE;
+
+    codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
+
+    codeBlock += E6imagB;  /* <img id="imageP" class="         container-fluid ... */
+    codeBlock += s.name;   /* Card photo */
+    codeBlock += E6imagE;
+
+    codeBlock += E7divE;
+    codeBlock += E7divE;
+
+
+    if (colN == 3 ) { codeBlock += E7divE; console.log("DIV" + colN); colN = 0; }
+
+  } );
+  codeBlock += 	E7divE; 
+
+  const newNode = document.getElementById("wrapper");
+
+  document.getElementById("wrapper").innerHTML = codeBlock
+
+  document.getElementById('status').innerHTML = 'DONE get cards';
+
+
+}
+
+</script>
+
+
+
+
+</body>
+</html>
