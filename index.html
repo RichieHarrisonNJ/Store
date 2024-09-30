@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <script src="locationImages.txt"> /* Use in different GitHub accounts */ </script>
+
 </head>
 
 
@@ -100,10 +102,10 @@ getItem();
 
 async function getItem() {
 
-
   document.getElementById('status').innerHTML = 'Start get cards';
 
-  const api_url = "https://api.github.com/repos/JohnMeistrell/Richie/contents/imagesRichie/";
+  const api_url = locationImage;
+
   const response = await fetch(api_url);
   let objvalue = await response.json();
   console.log(objvalue);
@@ -113,13 +115,14 @@ async function getItem() {
   var codeBlock = ''; var colN = 0;
 
   var E2row   = '<div class="row mr-auto container-fluid">';
-  var E3col   =    '<div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"             style="padding:0px; margin:0px; border:5px solid #000000;">';
+  var E3colA  =    '<div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid '
+  var E3colB  = '"             style="padding:0px; margin:0px; border:5px solid #000000;">';
 
   var E4itemB =       '<h2  class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
   var E4itemE =       '</h2>';
 
   var E5scrol =       '<div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">'
-  var E6imagB =           '<img class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/'
+  var E6imagB =           '<img class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="'+ folderImage;
   var E6imagE =           '" alt="Photo1" > '
   var E7divE  =       '</div>';
 
@@ -130,7 +133,18 @@ async function getItem() {
     colN = colN + 1;
     if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
 
-    codeBlock += E3col;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
+    var tagClass = '';
+    var nameArr = s.name.split('- Tag');
+    var trimTagX = nameArr[1];
+    if (trimTagX) {
+       var trimTagY = trimTagX.trim(); 
+       var tagArr = trimTagY.split('.');
+       tagClass = tagArr[0];
+    }
+
+    codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
+    codeBlock += tagClass;
+    codeBlock += E3colB;
 
     codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
     codeBlock += s.name;   /* Card heading */
