@@ -1,0 +1,3 @@
+var locationImage = "https://api.github.com/repos/RichieHarrisonNJ/Store/contents/imagesRichie/";
+
+var folderImage   = "Store/";
