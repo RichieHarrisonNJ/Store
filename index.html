@@ -104,7 +104,8 @@ async function getItem() {
 
   document.getElementById('status').innerHTML = 'Start get cards';
 
-  const api_url = locationImage;
+  const api_url    = locationImage;  /* File: LocationImage.txt: var locationImage = "https://api.github.com/repos/RichieHarrisonNJ/Store/contents/imagesRichie/"; */
+  const api_folder = folderImage;    /* File: LocationImage.txt: var folderImage   = "Store/"; */
 
   const response = await fetch(api_url);
   let objvalue = await response.json();
@@ -122,7 +123,7 @@ async function getItem() {
   var E4itemE =       '</h2>';
 
   var E5scrol =       '<div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">'
-  var E6imagB =           '<img class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="'+ folderImage;
+  var E6imagB =           '<img class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/';
   var E6imagE =           '" alt="Photo1" > '
   var E7divE  =       '</div>';
 
