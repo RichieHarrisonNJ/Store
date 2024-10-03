@@ -9,8 +9,7 @@
 
     <script src="locationImages.txt"> /* Use in different GitHub accounts */ </script>
 
-</head>
-
+    <script src="listImagesJSON.txt"> /* List images on C drive */ </script>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 <! ### WEB PAGE ###                                                                                                                 -->
@@ -46,24 +45,23 @@
    <div class="row mr-auto container-fluid">
 
        <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"      style="                                 padding:0px; margin:0px; border:5px solid #000000;">
-           <h2  id="titlePX" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Major League Baseball O Pee Chee 10 cards with bubble gum  - Graded Estimate ($65 to $220) - Asking $165 .jpg</h2>
+           <h2  id="titlePX" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Promo - Date with Richie - Donation Foundation for Blind</h2>
            <div id="scrolPX" class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-           <img id="imagePX" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Major League Baseball O Pee Chee 10 cards with bubble gum  - Graded Estimate ($65 to $220) - Asking $165 .jpg" alt="Photo1" > 
+           <img id="imagePX" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Promo - Date with Richie - Donation Foundation for Blind.jpg" alt="Photo1" > 
            </div>
        </div>
 
        <div class="mcol-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"    style="                                 padding:0px; margin:0px; border:5px solid #000000;" >
-           <h2  id="titleM" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >New York Yankees Upper Deck 8 cards one special edition - Graded Estimate ($50 to $200) - Asking $110.jpg<h2>
+           <h2  id="titleM" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Promo - Mugs - $10<h2>
            <div id="scrolM" class="scrolM   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-           <img id="imageM" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/PXL_20240902_202254943.jpg" alt="Photo1" > 
+           <img id="imageM" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Promo - Mugs - $10.jpg" alt="Photo1" > 
            </div>
        </div>
 
        <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"     style="                                 padding:0px; margin:0px; border:5px solid #000000;">
-           <h2  id="titleP" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >PXL_20240902_202254943.jpg
-<h2>
+           <h2  id="titleP" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Promo - T Shirt $20.jpg</h2>
            <div id="scrolP" class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-           <img id="imageP" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/PXL_20240903_195950945.MP.jpg" alt="Photo1" > 
+           <img id="imageP" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Promo - T Shirt $20.jpg" alt="Photo1" > 
            </div>
        </div>
 
@@ -104,15 +102,6 @@ async function getItem() {
 
   document.getElementById('status').innerHTML = 'Start get cards';
 
-  const api_url    = locationImage;  /* File: LocationImage.txt: var locationImage = "https://api.github.com/repos/RichieHarrisonNJ/Store/contents/imagesRichie/"; */
-  const api_folder = folderImage;    /* File: LocationImage.txt: var folderImage   = "Store/"; */
-
-  const response = await fetch(api_url);
-  let objvalue = await response.json();
-  console.log(objvalue);
-  saveR = objvalue;
-  console.log("done");
-
   var codeBlock = ''; var colN = 0;
 
   var E2row   = '<div class="row mr-auto container-fluid">';
@@ -129,41 +118,121 @@ async function getItem() {
 
   var E8divE  =    '</div>';
 
-  saveR.forEach( s => { 
-    console.log(s.name);
-    colN = colN + 1;
-    if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
 
-    var tagClass = '';
-    var nameArr = s.name.split('- Tag');
-    var trimTagX = nameArr[1];
-    if (trimTagX) {
-       var trimTagY = trimTagX.trim(); 
-       var tagArr = trimTagY.split('.');
-       tagClass = tagArr[0];
-    }
+  /* Image from GitHub C DRIVE (start) -----------------------------------------------------------------*/
+  if ( imageSource == "Laptop" ) {
+ 
+     imageList.sort();
 
-    codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
-    codeBlock += tagClass;
-    codeBlock += E3colB;
+     console.log('imageSource: ' + imageSource );
+     console.log(imageList);
 
-    codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
-    codeBlock += s.name;   /* Card heading */
-    codeBlock += E4itemE;
+     imageList.forEach(value => {
+          console.log(value);
 
-    codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
+        var sName = value;
+     
+        console.log(sName);
 
-    codeBlock += E6imagB;  /* <img id="imageP" class="         container-fluid ... */
-    codeBlock += s.name;   /* Card photo */
-    codeBlock += E6imagE;
+        colN = colN + 1;
+        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
 
-    codeBlock += E7divE;
-    codeBlock += E7divE;
+        var tagClass = '';
+        var nameArr = sName.split('- Tag');
+        var trimTagX = nameArr[1];
+        if (trimTagX) {
+           var trimTagY = trimTagX.trim(); 
+           var tagArr = trimTagY.split('.');
+           tagClass = tagArr[0];
+        }
+
+        codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
+        codeBlock += tagClass;
+        codeBlock += E3colB;
+
+        codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
+        codeBlock += sName;    /* Card heading */
+        codeBlock += E4itemE;
+
+        codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
+
+        codeBlock += E6imagB;  /* <img id="imageP" class="         container-fluid ... */
+        codeBlock += sName;    /* Card photo */
+        codeBlock += E6imagE;
+
+        codeBlock += E7divE;
+        codeBlock += E7divE;
+
+        if (colN == 3 ) { codeBlock += E7divE; console.log("DIV" + colN); colN = 0; }
 
 
-    if (colN == 3 ) { codeBlock += E7divE; console.log("DIV" + colN); colN = 0; }
 
-  } );
+
+
+     }) /* forEach */
+ 
+  }
+  /* Image from GitHub C DRIVE (end) -----------------------------------------------------------------*/
+
+
+
+  else      
+  /* Image from GitHub API (start) -----------------------------------------------------------------*/                       { 
+
+     console.log('imageSource: ' + imageSource );
+
+     const api_url    = locationImage;  /* File: LocationImage.txt: var locationImage = "https://api.github.com/repos/RichieHarrisonNJ/Store/contents/imagesRichie/"; */
+     const api_folder = folderImage;    /* File: LocationImage.txt: var folderImage   = "Store/"; */
+
+     const response = await fetch(api_url);
+     let objvalue = await response.json();
+     console.log(objvalue);
+     saveR = objvalue;
+     console.log("done");
+
+     saveR.forEach( s => {
+
+        var sName = s.name;
+     
+        console.log(sName);
+
+        colN = colN + 1;
+        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
+
+        var tagClass = '';
+        var nameArr = sName.split('- Tag');
+        var trimTagX = nameArr[1];
+        if (trimTagX) {
+           var trimTagY = trimTagX.trim(); 
+           var tagArr = trimTagY.split('.');
+           tagClass = tagArr[0];
+        }
+
+        codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
+        codeBlock += tagClass;
+        codeBlock += E3colB;
+
+        codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
+        codeBlock += sName;    /* Card heading */
+        codeBlock += E4itemE;
+
+        codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
+
+        codeBlock += E6imagB;  /* <img id="imageP" class="         container-fluid ... */
+        codeBlock += sName;    /* Card photo */
+        codeBlock += E6imagE;
+
+        codeBlock += E7divE;
+        codeBlock += E7divE;
+
+        if (colN == 3 ) { codeBlock += E7divE; console.log("DIV" + colN); colN = 0; }
+
+      } ); /* saveR.forEach (end) */
+
+
+  } ; /* Image from GitHub API (end) -----------------------------------------------------------------*/
+
+
   codeBlock += 	E7divE; 
 
   const newNode = document.getElementById("wrapper");
