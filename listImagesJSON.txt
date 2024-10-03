@@ -1,2 +1,1 @@
- var imageList = [ 
- ];
+ var imageList = [];
