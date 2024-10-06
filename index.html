@@ -123,6 +123,33 @@ async function getItem() {
   var E4itemB =       '<h2  class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
   var E4itemE =       '</h2>';
 
+  var useragent = navigator.userAgent.toLowerCase();
+  var E9phone = 'NoCell';
+  if ((useragent.indexOf("iPhone") != -1 || useragent.indexOf("Android") != -1 || useragent.indexOf("Blackberry") != -1 || useragent.indexOf("Mobile") != -1) && useragent.indexOf("iPad") == -1 && mob_url != "") {
+  var E9phone = 'Cell';
+  }
+
+  /*
+  var E9phone = 'Cell';
+  if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
+  var E9phone = 'NoCell';
+  }
+
+if( useragent.search("iphone") )
+    ; // iphone
+else if( useragent.search("ipod") )
+    ; // ipod
+else if( useragent.search("android") )
+    ; // android
+etc
+
+
+
+*/
+  var E9butMsg = "Click or press to for conversation with Richie about this item, then see your cell text message and press send. " + E9phone;
+  var E9butB  =       '<button type= "button" class="btn border border-light btn-primary btn-all" name="'
+  var E9butE  =       '" onclick="Data(this);">' + E9butMsg + '</button>'
+
   var E5scrol =       '<div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">'
   var E6imagB =           '<img class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/';
   var E6imagE =           '" alt="Photo1" > '
@@ -168,6 +195,10 @@ async function getItem() {
         codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
         codeBlock += sName;    /* Card heading */
         codeBlock += E4itemE;
+
+        codeBlock += E9butB;
+        codeBlock += sName;  
+        codeBlock += E9butE;
 
         codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
 
@@ -236,6 +267,10 @@ async function getItem() {
         codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
         codeBlock += sName;    /* Card heading */
         codeBlock += E4itemE;
+
+        codeBlock += E9butB;
+        codeBlock += sName;  
+        codeBlock += E9butE;
 
         codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
 
