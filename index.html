@@ -32,15 +32,18 @@
       <span class="text-nowrap bd-highlight font-weight-bolder">Selection:</span>
       <button type= "button" class="btn border border-light btn-primary btn-all" onclick="getItem('01');">Cards</button>
       <button type= "button" class="btn border border-light btn-primary btn-all" onclick="getItem('02');">Boxes</button>
+      <button type= "button" class="btn border border-light btn-primary btn-all" name="Baseball item 6" onclick="Data(this);">Purchase/Inquire item - Text message is generated for you for this item to send Richie.</button>
+<br>
+<a href='sms:+19082357304?&amp;body=Hello Richie'>Text Me</a>
+
 
       </div>
    </div>
-
    <!------------------------------------------------------------------------------------------------------- -->
    <! ### ITEM MAP GLASS MANUAL d-block w-100 width:700px; -->
    <!------------------------------------------------------------------------------------------------------- -->
 
-   <div class="card card-body"  style="padding:5px;">   
+   <div class="card card-body"  style="padding:5px;">  
 
    <div class="row mr-auto container-fluid">
 
@@ -93,6 +96,15 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+function Data(el)
+ {
+    var itemT =  el.name;
+    window.alert(itemT);
+
+ } 
+</script>
+
+<script type="text/javascript">
 
 var saveR = [];
 
@@ -128,11 +140,14 @@ async function getItem() {
      console.log(imageList);
 
      imageList.forEach(value => {
-          console.log(value);
-
+    
         var sName = value;
      
         console.log(sName);
+
+        var callMe = encodeURIComponent(sName);
+
+        console.log(callMe);
 
         colN = colN + 1;
         if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
@@ -165,10 +180,6 @@ async function getItem() {
 
         if (colN == 3 ) { codeBlock += E7divE; console.log("DIV" + colN); colN = 0; }
 
-
-
-
-
      }) /* forEach */
  
   }
@@ -190,9 +201,19 @@ async function getItem() {
      saveR = objvalue;
      console.log("done");
 
-     saveR.forEach( s => {
 
-        var sName = s.name;
+     console.log('json pull out name: ' + saveR);
+     saveR.forEach( s => {
+        var sName = s.name;     
+        console.log(sName);
+        imageList.push(sName);
+     })
+
+     imageList.sort();
+
+     imageList.forEach(value => {
+ 
+        var sName = value;
      
         console.log(sName);
 
