@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
-    <! version 1.0 0906 -->
+    <! version 1.0 1123 -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,11 +12,7 @@
 
     <script src="listImagesJSON.txt"> /* List images on C drive */ </script>
 
-<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
-<! ### WEB PAGE ###                                                                                                                 -->
-<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
-
-<body style="background-color:#a56ca7">
+<body style="background-color:#a56ca7" onload = "windowLoaded();" >
 
 <h3 class="text-center">Richie's Sports Memorabilia and Collectibles (TEST version)</h3>
 <br>
@@ -24,71 +21,71 @@
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
 <div class="cc" >
 
-   <!------------------------------------------------------------------------------------------------------- -->
-   <! ### BUTTONS -->
-   <!------------------------------------------------------------------------------------------------------- -->
-   <div class="card card-body" style="background-color:#feeb10; padding:5px;">
+   <div class="card card-body BUTTONS" style="background-color:#feeb10; padding:5px;">
       <div class="dropdown">
-      <span class="text-nowrap bd-highlight font-weight-bolder">Selection:</span>
-      <button type= "button" class="btn border border-light btn-primary btn-all" onclick="getItem('01');">Cards</button>
-      <button type= "button" class="btn border border-light btn-primary btn-all" onclick="getItem('02');">Boxes</button>
-      <button type= "button" class="btn border border-light btn-primary btn-all" name="Baseball item 6" onclick="Data(this);">Purchase/Inquire item - Text message is generated for you for this item to send Richie.</button>
-<br>
-<a href='sms:+19082357304?&amp;body=Hello Richie'>Text Me</a>
-
-
+         <span class="text-nowrap bd-highlight font-weight-bolder">Contact preference:</span>
+         <button type= "button" class="btn border border-light btn-primary btn-all" id="contact" onclick="contactMeth(this);">Cell</button>
+         <span class="text-nowrap bd-highlight font-weight-bolder">Selection:</span>
+         <button class="btn border border-light btn-primary btn-all"  type= "button">All</button>
+         <button class="btn border border-light btn-primary btn-none" type= "button">None</button>
+         <button class="btn border border-light btn-primary btn-Promo"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Promo"      aria-controls = ".multi-collapse-Promo"      >Promo   </button>      
+         <button class="btn border border-light btn-primary btn-Baseball"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Baseball"   aria-controls = ".multi-collapse-Baseball"   >Baseball</button>
+         <button class="btn border border-light btn-primary btn-Basketball" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Basketball" aria-controls = ".multi-collapse-Basketball" >Basketball</button>
+         <button class="btn border border-light btn-primary btn-Football"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Football"   aria-controls = ".multi-collapse-Football"   >Football</button>
+         <button class="btn border border-light btn-primary btn-NonSports"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-NonSports"  aria-controls = ".multi-collapse-NonSports"  >NonSports</button>
+         <button class="btn border border-light btn-primary btn-Special"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Special"    aria-controls = ".multi-collapse-Special"    >Special </button>
+         <br>
+         <a href='sms:+19082357304?&amp;body=Hello Richie'>Text Me</a>
       </div>
    </div>
-   <!------------------------------------------------------------------------------------------------------- -->
-   <! ### ITEM MAP GLASS MANUAL d-block w-100 width:700px; -->
-   <!------------------------------------------------------------------------------------------------------- -->
 
-   <div class="card card-body"  style="padding:5px;">  
+   <div class="card card-body TEST"  style="padding:5px;">  
+      <div class="row mr-auto container-fluid">
+         <div class="col-xs-12 col-sm-12">
+            <div id="multiCollapseExample000001" class="collapse cc multi-collapse-Baseball .multi-collapse-Baseball show" >
+                <div class="card card-body">   
+                     <div class="row mr-auto                 container-fluid">
+                         <div class="col-xs-6 col-sm-4 col-lg-3 col-xl-2 container-fluid"></div>
+                         <div class="col-xs-6 col-sm-8 col-lg-9 col-xl-10 container-fluid">
+                         <br><a href="https://moz.com/help/keyword-explorer/keyword-research/ranking-keywords"  target="_blank" >Find Keywords Your Site Already Rankings For- Help Hub - Moz </a>
+                         </div>
+   </div></div></div></div></div></div>
 
-   <div class="row mr-auto container-fluid">
+   <div class="card card-body PROMO"  style="padding:5px;">  
+   <div class="row mr-auto container-fluid collapse cc multi-collapse-Promo .multi-collapse-Promo show">
 
        <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"      style="                                 padding:0px; margin:0px; border:5px solid #000000;">
-           <h2  id="titlePX" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Promo - Date with Richie - Donation Foundation for Blind</h2>
+           <h2  id="titlePX" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd;" >Promo - Date with Richie - Donation Foundation for Blind </h2>
            <div id="scrolPX" class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-           <img id="imagePX" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Promo - Date with Richie - Donation Foundation for Blind.jpg" alt="Photo1" > 
+           <img id="imagePX" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesPromo/Promo - Date with Richie - Donation Foundation for Blind.jpg" alt="Photo1" > 
            </div>
        </div>
 
        <div class="mcol-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"    style="                                 padding:0px; margin:0px; border:5px solid #000000;" >
-           <h2  id="titleM" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Promo - Mugs - $10<h2>
+           <h2  id="titleM" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd;" >Promo - Mugs - $10     </h2>
            <div id="scrolM" class="scrolM   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-           <img id="imageM" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Promo - Mugs - $10.jpg" alt="Photo1" > 
+           <img id="imageM" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesPromo/Promo - Mugs - $10.jpg" alt="Photo1" > 
            </div>
        </div>
 
        <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"     style="                                 padding:0px; margin:0px; border:5px solid #000000;">
-           <h2  id="titleP" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd" >Promo - T Shirt $20.jpg</h2>
+           <h2  id="titleP" class="         container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd;" >Promo - T Shirt $20.jpg</h2>
            <div id="scrolP" class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-           <img id="imageP" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/Promo - T Shirt $20.jpg" alt="Photo1" > 
+           <img id="imageP" class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesPromo/Promo - T Shirt $20.jpg" alt="Photo1" > 
            </div>
        </div>
 
     </div></div>
 
-    <div id="wrapper1" class="card card-body"  style="padding:5px;">
+    <div id="wrapper" class="card card-body LIST"  style="padding:5px;">
+    </div>
 
-    <div id="wrapper" class="card card-body"  style="padding:5px;">
+    <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
+        <div class="text-center">                                                                    Website designed by 
+        <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.0)</a>
+       </div>
+    </div>
 
-</div>
-
-
-   <!------------------------------------------------------------------------------------------------------- -->
-   <! ### FOOTER -->
-   <!------------------------------------------------------------------------------------------------------- -->
-   <div class="card card-body" style="background-color:#feeb10; padding:5px;">
-      <div class="text-center">
-                                                                                                   Website designed by 
-
-      <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.0)</a>
-      </div>
-   </div>
-
-<!------------------------------------------------------------------------------------------------------- -->
 </div></div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -96,11 +93,31 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-function Data(el)
+function windowLoaded() 
+  {
+     const contactID = document.getElementById("contact");
+     var itsCell = 'Email';
+     if( screen.width <= 480 ) {
+         itsCell = 'Cell';
+     }
+     contactID.innerHTML = itsCell;
+   }
+</script>
+
+<script type="text/javascript">
+function Data(el,eItem)
  {
     var itemT =  el.name;
-    window.alert(itemT);
+    window.alert(eItem);
 
+ } 
+</script>
+
+<script type="text/javascript">
+function contactMeth(e)
+ {
+    var contactSel = e.innerHTML;
+    if ( contactSel == 'Cell' ) { e.innerHTML = 'Email' } else { e.innerHTML = 'Cell' } 
  } 
 </script>
 
@@ -114,41 +131,26 @@ async function getItem() {
 
   document.getElementById('status').innerHTML = 'Start get cards';
 
-  var codeBlock = ''; var colN = 0;
+  const itsCell = document.getElementById("contact").innerHTML;
 
-  var E2row   = '<div class="row mr-auto container-fluid">';
+  var codeBlock = ''; var colN = 0; var nItem = 0; var msgItem = ''; 
+
+  var E2row   = '';
+  var E2rowA  = '<div class="row mr-auto container-fluid collapse cc show';
+  var E2rowB  = '';
+  var E2rowC  = '">';
+
   var E3colA  =    '<div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid '
   var E3colB  = '"             style="padding:0px; margin:0px; border:5px solid #000000;">';
 
   var E4itemB =       '<h2  class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
   var E4itemE =       '</h2>';
 
-  var useragent = navigator.userAgent.toLowerCase();
-  var E9phone = 'NoCell';
-  if ((useragent.indexOf("iPhone") != -1 || useragent.indexOf("Android") != -1 || useragent.indexOf("Blackberry") != -1 || useragent.indexOf("Mobile") != -1) && useragent.indexOf("iPad") == -1 && mob_url != "") {
-  var E9phone = 'Cell';
-  }
+  var tttt = "'aaa'";
 
-  /*
-  var E9phone = 'Cell';
-  if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
-  var E9phone = 'NoCell';
-  }
-
-if( useragent.search("iphone") )
-    ; // iphone
-else if( useragent.search("ipod") )
-    ; // ipod
-else if( useragent.search("android") )
-    ; // android
-etc
-
-
-
-*/
-  var E9butMsg = "Click or press to for conversation with Richie about this item, then see your cell text message and press send. " + E9phone;
-  var E9butB  =       '<button type= "button" class="btn border border-light btn-primary btn-all" name="'
-  var E9butE  =       '" onclick="Data(this);">' + E9butMsg + '</button>'
+  var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Ask</button>';
+  var E9butB2  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Buy</button>';
+  var E9butB3  =  '';
 
   var E5scrol =       '<div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">'
   var E6imagB =           '<img class="         container-fluid"                style="min-height: 100px; width:700px;  padding:0px; margin:0px" src="imagesRichie/';
@@ -157,59 +159,108 @@ etc
 
   var E8divE  =    '</div>';
 
+/*
+<div class="col-xs-12 col-sm-12">
+   <div id="multiCollapseExample000001" class="collapse cc multi-collapse-Baseball .multi-collapse-Baseball
+   " >
+   <div class="card card-body">  
+   <div class="row mr-auto                 container-fluid"> 
+*/
+
+  console.log('Source images: ' + imageSource );
 
   /* Image from GitHub C DRIVE (start) -----------------------------------------------------------------*/
   if ( imageSource == "Laptop" ) {
  
-     imageList.sort();
-
-     console.log('imageSource: ' + imageSource );
-     console.log(imageList);
-
-     imageList.forEach(value => {
+     var lastItemSelectionBuilt = ''
+     imageList.sort();                                      /* SORT */
+     imageList.forEach(value => {                           /* EACH */
     
         var sName = value;
-     
+
+        /* -------------------------------------------------------------------- */     
+        /* 001 COMMON CODE START (MUST COPY see way below in from GITHUB section  */
+        /* -------------------------------------------------------------------- */     
+
         console.log(sName);
 
         var callMe = encodeURIComponent(sName);
 
-        console.log(callMe);
-
-        colN = colN + 1;
-        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
-
         var tagClass = '';
-        var nameArr = sName.split('- Tag');
-        var trimTagX = nameArr[1];
+        var nameArr = sName.split(' - ');
+        var trimTagX = nameArr[0];
         if (trimTagX) {
            var trimTagY = trimTagX.trim(); 
            var tagArr = trimTagY.split('.');
            tagClass = tagArr[0];
         }
+        console.log('Tag: ' + tagClass );
 
+        E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + E2rowC;
+
+        colN = colN + 1;
+        if ( lastItemSelectionBuilt == tagClass ) {
+        } else {
+          if ( colN > 1 ) {
+               colN = 1;
+               codeBlock += E7divE; console.log("ROW END DIV" + colN + 'Class changed'); 
+          } 
+        }
+
+        lastItemSelectionBuilt = tagClass;
+
+
+        /*
+        ROW: <div class="row mr-auto container-fluid collapse cc multi-collapse-Baseball .multi-collapse-Baseball">
+        COL:    <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Baseball">
+        HDR:    |    <h2  class="                                    container-fluid text-center" >Baseball - Major League</h2>
+        BUT:    |    <button type= "button" class="btn border border-light ">Buy</button>
+        MSG:    |    <label id="buyMsgID1"></label>
+        SCR:    |    <div class="scrolP   container-fluid pre-scrollable" >
+        IMG:    |    |    <img class="     container-fluid"  > 
+                |    </div>
+                </div>
+        */
+
+        /* ROW ------------------------ */
+        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
+
+        nItem = nItem + 1;
+        msgItem  = '"buyMsgID' + nItem + '"';
+        console.log(msgItem );
+
+        /* COL ------------------------ */
         codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
         codeBlock += tagClass;
         codeBlock += E3colB;
 
+        /* HDR --------------------- */
         codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
         codeBlock += sName;    /* Card heading */
         codeBlock += E4itemE;
 
-        codeBlock += E9butB;
-        codeBlock += sName;  
-        codeBlock += E9butE;
+        /* BUT/MSG: --------------------- */
+        codeBlock += E9butB1;
+        codeBlock += E9butB2;
+        E9butB3  =       '<label id=' + msgItem  + '></label>';
+        codeBlock += E9butB3;
 
+        /* SCR/IMG: --------------------- */
         codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
-
         codeBlock += E6imagB;  /* <img id="imageP" class="         container-fluid ... */
         codeBlock += sName;    /* Card photo */
         codeBlock += E6imagE;
-
-        codeBlock += E7divE;
         codeBlock += E7divE;
 
-        if (colN == 3 ) { codeBlock += E7divE; console.log("DIV" + colN); colN = 0; }
+        /* COL ------------------------ */
+        codeBlock += E7divE;
+
+        /* ROW ------------------------ */
+        if (colN == 3 ) { codeBlock += E7divE; console.log("ROW END DIV" + colN); colN = 0; }
+
+        /* -------------------------------------------------------------------- */
+        /* 001 COMMON CODE END                                                  */
+        /* -------------------------------------------------------------------- */
 
      }) /* forEach */
  
@@ -240,48 +291,95 @@ etc
         imageList.push(sName);
      })
 
-     imageList.sort();
-
-     imageList.forEach(value => {
- 
+     var lastItemSelectionBuilt = ''
+     imageList.sort();                                       /* SORT */
+     imageList.forEach(value => {                            /* EACH */
+     
         var sName = value;
      
+        /* -------------------------------------------------------------------- */
+        /* 001 COMMON CODE START - COPY FROM ABOVE - DONT CHANGE                */
+        /* -------------------------------------------------------------------- */
         console.log(sName);
 
-        colN = colN + 1;
-        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
+        var callMe = encodeURIComponent(sName);
 
         var tagClass = '';
-        var nameArr = sName.split('- Tag');
-        var trimTagX = nameArr[1];
+        var nameArr = sName.split(' - ');
+        var trimTagX = nameArr[0];
         if (trimTagX) {
            var trimTagY = trimTagX.trim(); 
            var tagArr = trimTagY.split('.');
            tagClass = tagArr[0];
         }
+        console.log('Tag: ' + tagClass );
 
+        E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + E2rowC;
+
+        colN = colN + 1;
+        if ( lastItemSelectionBuilt == tagClass ) {
+        } else {
+          if ( colN > 1 ) {
+               colN = 1;
+               codeBlock += E7divE; console.log("ROW END DIV" + colN + 'Class changed'); 
+          } 
+        }
+
+        lastItemSelectionBuilt = tagClass;
+
+
+        /*
+        ROW: <div class="row mr-auto container-fluid collapse cc multi-collapse-Baseball .multi-collapse-Baseball">
+        COL:    <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Baseball">
+        HDR:    |    <h2  class="                                    container-fluid text-center" >Baseball - Major League</h2>
+        BUT:    |    <button type= "button" class="btn border border-light ">Buy</button>
+        MSG:    |    <label id="buyMsgID1"></label>
+        SCR:    |    <div class="scrolP   container-fluid pre-scrollable" >
+        IMG:    |    |    <img class="     container-fluid"  > 
+                |    </div>
+                </div>
+        */
+
+        /* ROW ------------------------ */
+        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
+
+        nItem = nItem + 1;
+        msgItem  = '"buyMsgID' + nItem + '"';
+        console.log(msgItem );
+
+        /* COL ------------------------ */
         codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
         codeBlock += tagClass;
         codeBlock += E3colB;
 
+        /* HDR --------------------- */
         codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
         codeBlock += sName;    /* Card heading */
         codeBlock += E4itemE;
 
-        codeBlock += E9butB;
-        codeBlock += sName;  
-        codeBlock += E9butE;
+        /* BUT/MSG: --------------------- */
+        codeBlock += E9butB1;
+        codeBlock += E9butB2;
+        E9butB3  =       '<label id=' + msgItem  + '></label>';
+        codeBlock += E9butB3;
 
+        /* SCR/IMG: --------------------- */
         codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
-
         codeBlock += E6imagB;  /* <img id="imageP" class="         container-fluid ... */
         codeBlock += sName;    /* Card photo */
         codeBlock += E6imagE;
-
-        codeBlock += E7divE;
         codeBlock += E7divE;
 
-        if (colN == 3 ) { codeBlock += E7divE; console.log("DIV" + colN); colN = 0; }
+        /* COL ------------------------ */
+        codeBlock += E7divE;
+
+        /* ROW ------------------------ */
+        if (colN == 3 ) { codeBlock += E7divE; console.log("ROW END DIV" + colN); colN = 0; }
+
+
+        /* -------------------------------------------------------------------- */
+        /* 001 COMMON CODE END                                                  */
+        /* -------------------------------------------------------------------- */
 
       } ); /* saveR.forEach (end) */
 
@@ -290,6 +388,8 @@ etc
 
 
   codeBlock += 	E7divE; 
+
+  console.log(codeBlock);
 
   const newNode = document.getElementById("wrapper");
 
@@ -301,6 +401,25 @@ etc
 }
 
 </script>
+
+<script>
+$(document).ready(function(){
+  $(".btn-all").click(function(){  $(".collapse").addClass("show");  });
+  $(".btn-none").click(function(){  $(".collapse").removeClass("show");  });
+
+
+  $(".btn-Baseball").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Football").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Basketball").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-NonSports").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Promo").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Special").click(function(){  $(".collapse").removeClass("show");  });
+
+});
+</script>
+
+
+
 
 
 
