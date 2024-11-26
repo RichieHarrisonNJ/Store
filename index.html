@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! version 1.0 1125 9pm -->
+    <! version 1.0 1125 10pm -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -149,9 +149,10 @@ async function getItem() {
 
   var tttt = "'aaa'";
 
-  var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Ask</button>';
+  var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Ask Richie</button>';
   var E9butB2  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Buy</button>';
-  var E9butB3  =  '';
+  var E9butB3  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Grade Info</button>';
+  var E9butBM  =  '';  /* Message to user */
 
   var E5scrol =       '<div class="scrolP   container-fluid" style="min-height: 390px;               padding:0px; margin:0px">'
   var E6imagB =           '<img class="     container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain;  padding:0px; margin:0px" src="imagesRichie/';
@@ -256,8 +257,9 @@ style="min-height: 390px;               padding:0px; margin:0px">
         /* BUT/MSG: --------------------- */
         codeBlock += E9butB1;
         codeBlock += E9butB2;
-        E9butB3  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butB3;
+        E9butBM  =       '<label id=' + msgItem  + '></label>';
+        codeBlock += E9butBM;
 
         /* SCR/IMG: --------------------- */
         codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
@@ -385,8 +387,9 @@ style="min-height: 390px;               padding:0px; margin:0px">
         /* BUT/MSG: --------------------- */
         codeBlock += E9butB1;
         codeBlock += E9butB2;
-        E9butB3  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butB3;
+        E9butBM  =       '<label id=' + msgItem  + '></label>';
+        codeBlock += E9butBM;
 
         /* SCR/IMG: --------------------- */
         codeBlock += E5scrol;  /* <div id="scrolP" class="scrolP   container-fluid ... */
