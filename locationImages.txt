@@ -3,3 +3,7 @@ var locationImage = "https://api.github.com/repos/RichieHarrisonNJ/Store/content
 var folderImage   = "Store/";
 
 var imageSource   = "Richie" ;
+
+var gradingWeb    = "'https://www.youtube.com/watch?v=eUHRI7E7GxM'" ;
+
+var contact1      = '7326199014';
