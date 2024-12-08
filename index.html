@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! version 1.0 1125 10pm -->
+    <! version 1.0 1208u 2pm -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,8 +34,6 @@
          <button class="btn border border-light btn-primary btn-Football"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Football"   aria-controls = ".multi-collapse-Football"   >Football</button>
          <button class="btn border border-light btn-primary btn-NonSports"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-NonSports"  aria-controls = ".multi-collapse-NonSports"  >NonSports</button>
          <button class="btn border border-light btn-primary btn-Special"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Special"    aria-controls = ".multi-collapse-Special"    >Special </button>
-         <br>
-         <a href='sms:+19082357304?&amp;body=Hello Richie'>Text Me</a>
       </div>
    </div>
 
@@ -147,17 +145,22 @@ async function getItem() {
   var E4itemB =       '<h2  class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
   var E4itemE =       '</h2>';
 
-  var tttt = "'aaa'";
+  var tttt = "'Hi Richie, Asking about'";
 
   var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Ask Richie</button>';
-  var E9butB2  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Buy</button>';
-  var E9butB3  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Grade Info</button>';
+  var E9butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="sms:+';
+  var E9butB2b =       '';
+  var E9butB2c =       '?&amp;body=Hello Richie, I would like to buy ';
+  var E9butB2d =       '';
+  var E9butB2e =       '">Buy</a>';
+
+  var E9butB3  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onClick="window.open(' + gradingWeb + ');">Grade</button>';
   var E9butBM  =  '';  /* Message to user */
 
   var E5scrol =       '<div class="scrolP   container-fluid" style="min-height: 390px;               padding:0px; margin:0px">'
   var E6imagB =           '<img class="     container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain;  padding:0px; margin:0px" src="imagesRichie/';
   var E6imagE =           '" alt="Photo1" > '
-  var E7divE  =       '</div>';
+  var E7divE  =       '</div>'
 
   var E8divE  =    '</div>';
 
@@ -219,7 +222,6 @@ style="min-height: 390px;               padding:0px; margin:0px">
                codeBlock += E3CatH;
                codeBlock += E3CatH;
 
-
         }
 
         lastItemSelectionBuilt = tagClass;
@@ -255,8 +257,14 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E4itemE;
 
         /* BUT/MSG: --------------------- */
+        E9butB2b = contact1;
+        E9butB2d = sName;
         codeBlock += E9butB1;
-        codeBlock += E9butB2;
+        codeBlock += E9butB2a;
+        codeBlock += E9butB2b;
+        codeBlock += E9butB2c;
+        codeBlock += E9butB2d;
+        codeBlock += E9butB2e;
         codeBlock += E9butB3;
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
@@ -316,6 +324,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
         /* -------------------------------------------------------------------- */
         /* 001 COMMON CODE START - COPY FROM ABOVE - DONT CHANGE                */
         /* -------------------------------------------------------------------- */
+
         console.log(sName);
 
         var callMe = encodeURIComponent(sName);
@@ -348,7 +357,6 @@ style="min-height: 390px;               padding:0px; margin:0px">
                codeBlock += E3CatG;
                codeBlock += E3CatH;
                codeBlock += E3CatH;
-
 
         }
 
@@ -385,8 +393,14 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E4itemE;
 
         /* BUT/MSG: --------------------- */
+        E9butB2b = contact1;
+        E9butB2d = sName;
         codeBlock += E9butB1;
-        codeBlock += E9butB2;
+        codeBlock += E9butB2a;
+        codeBlock += E9butB2b;
+        codeBlock += E9butB2c;
+        codeBlock += E9butB2d;
+        codeBlock += E9butB2e;
         codeBlock += E9butB3;
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
