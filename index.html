@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! version 1.0 1208u 2pm -->
+    <! version 1.0 12010t 1130am -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,9 +14,7 @@
 
 <body style="background-color:#a56ca7" onload = "windowLoaded();" >
 
-<h3 class="text-center">Richie's Sports Memorabilia and Collectibles (TEST version)</h3>
-<br>
-<label id="status"></label>
+<h3 class="text-center">Richie's Sports Memorabilia and Collectibles - Manalapan NJ (TEST version)</h3>
 
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
 <div class="cc" >
@@ -34,6 +32,9 @@
          <button class="btn border border-light btn-primary btn-Football"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Football"   aria-controls = ".multi-collapse-Football"   >Football</button>
          <button class="btn border border-light btn-primary btn-NonSports"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-NonSports"  aria-controls = ".multi-collapse-NonSports"  >NonSports</button>
          <button class="btn border border-light btn-primary btn-Special"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Special"    aria-controls = ".multi-collapse-Special"    >Special </button>
+         <label id="status">Item list in progress...</label>
+         <span class="text-nowrap bd-highlight font-weight-bolder">Contact Richie: Text: 732-619-9014 Email: 7326199014@vtext.com</span>
+
       </div>
    </div>
 
@@ -147,12 +148,19 @@ async function getItem() {
 
   var tttt = "'Hi Richie, Asking about'";
 
-  var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Ask Richie</button>';
-  var E9butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="sms:+';
+  var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all">Ask-Text</button>';
+
+  var E9butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="sms:';
   var E9butB2b =       '';
   var E9butB2c =       '?&amp;body=Hello Richie, I would like to buy ';
   var E9butB2d =       '';
-  var E9butB2e =       '">Buy</a>';
+  var E9butB2e =       '">Buy-Text</a>';
+
+  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&to=';
+  var E10butB2b =       '';
+  var E10butB2c =       '@vtext.com&su=Purchase Request from Richies Sports Memorabilia and Collectibles&body=Hello Richie, I would like to buy ';
+  var E10butB2d =       '';
+  var E10butB2e =       '"target="_blank">Buy-eMail</a>';
 
   var E9butB3  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onClick="window.open(' + gradingWeb + ');">Grade</button>';
   var E9butBM  =  '';  /* Message to user */
@@ -163,6 +171,8 @@ async function getItem() {
   var E7divE  =       '</div>'
 
   var E8divE  =    '</div>';
+
+  var ElemTest = '';
 
 /*
 
@@ -266,6 +276,34 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E9butB2d;
         codeBlock += E9butB2e;
         codeBlock += E9butB3;
+
+        E10butB2b = contact1;
+        E10butB2d = sName;
+        codeBlock += E10butB2a;
+        codeBlock += E10butB2b;
+        codeBlock += E10butB2c;
+        codeBlock += E10butB2d;
+        codeBlock += E10butB2e;
+
+        ElemTest = '';
+        ElemTest += E10butB2a;
+        ElemTest += E10butB2b;
+        ElemTest += E10butB2c;
+        ElemTest += E10butB2d;
+        ElemTest += E10butB2e;
+
+        console.log("");
+        console.log(ElemTest);
+
+/*
+  var E10butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Ask Richie</button>';
+  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="<a href="https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&to=';
+  var E10butB2b =       '';
+  var E10butB2c =       '@vtext.com&su=BuyItem&body=Hello Richie, I would like to buy ';
+  var E10butB2d =       '';
+  var E10butB2e =       '"target="_blank">Buy EMAIL</a>';
+*/
+
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
 
@@ -402,6 +440,34 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E9butB2d;
         codeBlock += E9butB2e;
         codeBlock += E9butB3;
+
+        E10butB2b = contact1;
+        E10butB2d = sName;
+        codeBlock += E10butB2a;
+        codeBlock += E10butB2b;
+        codeBlock += E10butB2c;
+        codeBlock += E10butB2d;
+        codeBlock += E10butB2e;
+
+        ElemTest = '';
+        ElemTest += E10butB2a;
+        ElemTest += E10butB2b;
+        ElemTest += E10butB2c;
+        ElemTest += E10butB2d;
+        ElemTest += E10butB2e;
+
+        console.log("");
+        console.log(ElemTest);
+
+/*
+  var E10butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onclick="Data(this,' + tttt + ');">Ask Richie</button>';
+  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="<a href="https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&to=';
+  var E10butB2b =       '';
+  var E10butB2c =       '@vtext.com&su=BuyItem&body=Hello Richie, I would like to buy ';
+  var E10butB2d =       '';
+  var E10butB2e =       '"target="_blank">Buy EMAIL</a>';
+*/
+
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
 
@@ -417,6 +483,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
 
         /* ROW ------------------------ */
         if (colN == 3 ) { codeBlock += E7divE; console.log("ROW END DIV" + colN); colN = 0; }
+
 
         /* -------------------------------------------------------------------- */
         /* 001 COMMON CODE END                                                  */
@@ -436,7 +503,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
 
   document.getElementById("wrapper").innerHTML = codeBlock
 
-  document.getElementById('status').innerHTML = 'DONE get cards';
+  document.getElementById('status').innerHTML = 'All items are shown below.';
 
 
 }
