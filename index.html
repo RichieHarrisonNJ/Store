@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
 
-    <! version 1.0 12010t 1142am -->
+    <! version 1.0 1212r 1142am -->
 
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"   rel="stylesheet"   integrity= "sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"     crossorigin="anonymous"> 
 
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
     <script src="locationImages.txt"> /* Use in different GitHub accounts */ </script>
 
     <script src="listImagesJSON.txt"> /* List images on C drive */ </script>
 
-<body style="background-color:#a56ca7" onload = "windowLoaded();" >
+<body style="background-color:#a56ca7; overscroll-behavior-y:none; " onload = "windowLoaded();" >
 
 <h3 class="text-center">Richie's Sports Memorabilia and Collectibles - Manalapan NJ (TEST version)</h3>
 
@@ -23,41 +25,25 @@
 
    <div class="card card-body BUTTONS" style="background-color:#feeb10; padding:5px;">
       <div class="dropdown">
-         <span class="text-nowrap bd-highlight font-weight-bolder">Contact preference:</span>
-         <button type= "button" class="btn border border-light btn-primary btn-all" id="contact" onclick="contactMeth(this);">Cell</button>
-         <span class="text-nowrap bd-highlight font-weight-bolder">Selection:</span>
+
+         <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
          <button class="btn border border-light btn-primary btn-all"  type= "button">All</button>
-         <button class="btn border border-light btn-primary btn-none" type= "button">None</button>
          <button class="btn border border-light btn-primary btn-Promo"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Promo"      aria-controls = ".multi-collapse-Promo"      >Promo   </button>      
          <button class="btn border border-light btn-primary btn-Baseball"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Baseball"   aria-controls = ".multi-collapse-Baseball"   >Baseball</button>
          <button class="btn border border-light btn-primary btn-Basketball" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Basketball" aria-controls = ".multi-collapse-Basketball" >Basketball</button>
          <button class="btn border border-light btn-primary btn-Football"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Football"   aria-controls = ".multi-collapse-Football"   >Football</button>
          <button class="btn border border-light btn-primary btn-NonSports"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-NonSports"  aria-controls = ".multi-collapse-NonSports"  >NonSports</button>
          <button class="btn border border-light btn-primary btn-Special"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Special"    aria-controls = ".multi-collapse-Special"    >Special </button>
-         <br>
-         <label id="status">Item list in progress...</label>
 
-             <button type="button" class="btn btn-primary" onclick="AddCart(this,'TEST');">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
-                 <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"></path>
-                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
-                 </svg>
-                 Buy
-            </button>
-
-         <button type="button" class="btn btn-success">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-question" viewBox="0 0 16 16">
-                <path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.7 1.7 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745"></path>
-                <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"></path>
-                <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0"></path>
-                </svg>
-                Ask
-              </button>
+         <span class="text-nowrap bd-highlight font-weight-bolder">Checkout:</span>
          <button class="btn border border-light btn-primary btn-none" type= "button">Cart</button>
 
          <br>
+         <span class="bd-highlight font-weight-bolder">Contact Richie by text: 732-619-9014 or email: 7326199014@vtext.com</span>
+         <button type= "button" class="btn border border-light btn-primary btn-all" id="contact" onclick="contactMeth(this);">Cell</button>
 
-         <span class="bd-highlight font-weight-bolder">Contact Richie: Text: 732-619-9014 Email: 7326199014@vtext.com</span>
+         <label id="status">Item list in progress...</label>
+
 
       </div>
    </div>
@@ -95,8 +81,6 @@
     <div id="wrapper" class="card card-body LIST"  style="padding:5px;">
     </div>
 
-
-
     <div class="card card-body CART "  style="padding:0px; margin:0px; border:0px; "> 
        <div class="row mr-auto container-fluid collapseX ccX multi-collapse-Cart .multi-collapse-Cart show"> 
        <h2                       class="         container-fluid text-center collapseX ccX multi-collapse-Cart .multi-collapse-Cart show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >CART</h2>
@@ -109,7 +93,7 @@
 
     <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
         <div class="text-center">                                                                    Website designed by 
-        <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.0)</a>
+        <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.4)</a>
        </div>
     </div>
 
@@ -145,19 +129,87 @@ function contactMeth(e)
  {
     var contactSel = e.innerHTML;
     if ( contactSel == 'Cell' ) { e.innerHTML = 'Email' } else { e.innerHTML = 'Cell' } 
+
+
+
+/*
+var divsToHide = document.getElementsByClassName("classname"); //divsToHide is an array
+    for(var i = 0; i < divsToHide.length; i++){
+        divsToHide[i].style.visibility = "hidden"; // or
+        divsToHide[i].style.display = "none"; // depending on what you're doing
+    }
+
+  $(".btn-all").click(function(){  $(".collapse").addClass("show");  });
+  $(".btn-none").click(function(){  $(".collapse").removeClass("show");  });
+
+*/
+
+
+document.querySelectorAll('.emailcell').forEach(function(el) {
+   el.style.display = 'none';
+});
+
+
+
+
  } 
 </script>
 
 <script type="text/javascript">
-function AddCart(e,buyit)
+function AddCart(e,action,item)
  {
+
+
+var CartA  = '<li class="list-group-item">';
+var CartB = '<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" onclick="return this.parentNode.remove();" >Remove</button><img src="imagesRichie/';
+var CartB = '<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" onclick="return this.parentNode.remove();" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi  bi-trash3" viewBox="0 0 16 16"><path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/></svg>Remove</button><img src="imagesRichie/';
+
+
+
+
+
+var CartC = item ; /* Promo - Mugs - $10.jpg */
+var CartD = '" alt="avatar 1" style="width: 45px; height: auto;"><span class="ms-2">';
+var CartE = action + ": " + item ; /* ASK: Ball - New York Yankees */
+var CartF = '</span></li>';
+
+var CartItem =  document.getElementById("wrapper3").innerHTML;
+CartItem += CartA;
+CartItem += CartB;
+CartItem += CartC;
+CartItem += CartD;
+CartItem += CartE;
+CartItem += CartF;
+
+
+
+console.log(CartItem);
+
     var ccc = e.innerHTML;
+
+document.getElementById("wrapper3").innerHTML = CartItem;
+
+
+/*
 
 const olElement = document.getElementById("wrapper3");
 const newListItem = document.createElement("li");
 newListItem.classList.add("list-group-item");
-newListItem.textContent = buyit;
+newListItem.textContent = action + ": " + item;
 olElement.appendChild(newListItem);
+
+
+<li class="list-group-item">;
+<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" 
+onclick="return this.parentNode.remove();" >Remove</button>
+
+<img src="imagesRichie/Football - Bowman 2000 - Graded Estimate ($56 to $170) - Asking $112.jpg" alt="avatar 1" style="width: 45px; height: auto;">
+<span class="ms-2">Football - Bowman 2000 - Graded Estimate ($56 to $170) - Asking $112.jpg</span></li>
+
+
+
+*/
+
 
 
 
@@ -202,26 +254,45 @@ async function getItem() {
 
   var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all">Ask-Text</button>';
 
+  /*               TEXT */
   var E9butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="sms:';
   var E9butB2b =       '';
   var E9butB2c =       '?&amp;body=Hello Richie, I would like to buy ';
   var E9butB2d =       '';
   var E9butB2e =       '">Buy-Text</a>';
 
-  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&to=';
+
+  /* WORKS BIG https://mail.google.com/mail/u/1/?ui=2&fs=1&tf=cm&to=9082357304@vtext.com&su=Purchase#compose=new */
+
+  /*                EMAIL */
+  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&to='; /* ORIG */
+  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all emailcell" href="https://mail.google.com/mail/u/1/?ui=2&fs=1&tf=cm&to=';
   var E10butB2b =       '';
   var E10butB2c =       '@vtext.com&su=Purchase Request from Richies Sports Memorabilia and Collectibles&body=Hello Richie, I would like to buy ';
   var E10butB2d =       '';
   var E10butB2e =       '"target="_blank">Buy-eMail</a>';
 
+  /*                GRADE */
   var E9butB3  =       '<button type= "button" class="btn border border-light btn-primary btn-all" onClick="window.open(' + gradingWeb + ');">Grade</button>';
 
-  var E11butA1a =       '<button type="button" class="btn btn-primary" onclick="AddCart(this,';
- 
+  var E11butACT = "'BUY'";
+  var E11butA1a =       '<button type="button" class="btn btn-primary" onclick="AddCart(this,' + E11butACT  + ',';
   var E11butA1b =       ');"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">';
   var E11butA1c =       '<path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"></path>';
   var E11butA1d =       '<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>';
   var E11butA1e =       '</svg>Buy</button>';
+
+      E11butACT = "'ASK'";
+  var E11butB1a =       '<button type="button" class="btn btn-success" onclick="AddCart(this,' + E11butACT  + ',';
+  var E11butB1b =       ');"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-question" viewBox="0 0 16 16">';
+  var E11butB1c =       '<path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.7 1.7 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745"></path>';
+  var E11butB1d =       '<path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"></path>';
+  var E11butB1e =       ' <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0"></path>';
+  var E11butB1f =       '</svg>Ask</button>';
+
+
+  var E11butC1a =       '<button class="btn border border-light btn-primary btn-none" type= "button">Cart</button>';
+
 
   var E9butBM  =  '';  /* Message to user */
 
@@ -358,6 +429,16 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E11butA1c;
         codeBlock += E11butA1d;
         codeBlock += E11butA1e;
+
+        codeBlock += E11butB1a;
+        codeBlock += "'" + E10butB2d + "'";
+        codeBlock += E11butB1b;
+        codeBlock += E11butB1c;
+        codeBlock += E11butB1d;
+        codeBlock += E11butB1e;
+        codeBlock += E11butB1f;
+
+        codeBlock += E11butC1a;
 
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
@@ -518,7 +599,15 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E11butA1d;
         codeBlock += E11butA1e;
 
+        codeBlock += E11butB1a;
+        codeBlock += "'" + E10butB2d + "'";
+        codeBlock += E11butB1b;
+        codeBlock += E11butB1c;
+        codeBlock += E11butB1d;
+        codeBlock += E11butB1e;
+        codeBlock += E11butB1f;
 
+        codeBlock += E11butC1a;
 
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
@@ -553,7 +642,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
 
   document.getElementById("wrapper").innerHTML = codeBlock
 
-  document.getElementById('status').innerHTML = 'All items are shown below.';
+  document.getElementById('status').innerHTML = 'All items are shown. New items added daily.';
 
 
 
