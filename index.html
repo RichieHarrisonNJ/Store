@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! version 1.0 1212r 1142am -->
+    <! version 1.8 1222u 450pm -->
 
     <meta charset="utf-8">
 
@@ -23,7 +23,15 @@
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
 <div class="cc" >
 
-   <div class="card card-body BUTTONS" style="background-color:#feeb10; padding:5px;">
+
+
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card card-body sticky-top">
+
+
+  <div class="card card-body BUTTONS" style="background-color:#feeb10; padding:5px;">
       <div class="dropdown">
 
          <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
@@ -40,7 +48,7 @@
 
          <br>
          <span class="bd-highlight font-weight-bolder">Contact Richie by text: 732-619-9014 or email: 7326199014@vtext.com</span>
-         <button type= "button" class="btn border border-light btn-primary btn-all" id="contact" onclick="contactMeth(this);">Cell</button>
+         <button type= "button" class="btn border border-light btn-primary btn-none" id="contact" onclick="contactMeth(this);">Cell</button>
 
          <label id="status">Item list in progress...</label>
 
@@ -48,6 +56,17 @@
       </div>
    </div>
 
+
+
+            </div>
+        </div>
+
+        <div class="col-md">
+
+
+
+
+ 
    <div class="card card-body PROMO"  style="padding:0px; margin:0px; border:0px; "> 
    <div class="row mr-auto container-fluid collapse cc multi-collapse-Promo .multi-collapse-Promo show"> 
    <h2                       class="         container-fluid text-center collapse cc multi-collapse-Promo .multi-collapse-Promo show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >Promo </h2>
@@ -78,26 +97,56 @@
 
     </div></div>
 
+
+
     <div id="wrapper" class="card card-body LIST"  style="padding:5px;">
     </div>
 
+
+
     <div class="card card-body CART "  style="padding:0px; margin:0px; border:0px; "> 
-       <div class="row mr-auto container-fluid collapseX ccX multi-collapse-Cart .multi-collapse-Cart show"> 
-       <h2                       class="         container-fluid text-center collapseX ccX multi-collapse-Cart .multi-collapse-Cart show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >CART</h2>
-       </div>
-       <div class="row mr-auto container-fluid collapseX ccX multi-collapse-Cart .multi-collapse-Cart show" >
-           <ol id="wrapper3" class="list-group list-group-numbered"> 
-          </ol> 
-       </div>
+    <div class="row mr-auto container-fluid collapseX ccX multi-collapse-Cart .multi-collapse-Cart show"> 
+    <h2                       class="         container-fluid text-center collapseX ccX multi-collapse-Cart .multi-collapse-Cart show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >CART</h2>
     </div>
+
+    <div class="row mr-auto container-fluid collapseX ccX multi-collapse-Cart .multi-collapse-Cart show" >
+       <div class="card card-body " style="background-color:#feeb10; padding:5px;">
+       <div class="dropdown">
+          <a type="button" class="btn border border-light btn-primary btn-none  role="button" href="#" onclick="sendOrder(this)">Checkout</a> 
+          <label id="order" class="text-nowrap"  >An email will be produced for your order. Please press SEND on that email. Thank you.</label> 
+      </div>
+      </div>
+    </div>
+
+
+    <div class="row mr-auto container-fluid collapseX ccX multi-collapse-Cart .multi-collapse-Cart show" >
+          <ol id="wrapper3" class="list-group list-group-numbered"> 
+          </ol> 
+    </div>
+
+    </div>
+
+
+
+
 
     <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
         <div class="text-center">                                                                    Website designed by 
-        <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.4)</a>
+        <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.8)</a>
        </div>
     </div>
 
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
 </div></div>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -124,33 +173,53 @@ function Data(el,eItem)
  } 
 </script>
 
+
+<script type="text/javascript">
+function sendOrder(e)
+ {
+
+var myOrder = "";
+
+
+const orderedList = document.getElementById("wrapper3");
+const listItems = orderedList.querySelectorAll('li');
+const listItemsArray = Array.from(listItems);
+listItemsArray.forEach((listItem) => {
+
+  myOrder += listItem.textContent.substring(6).slice(0, -4) + "%0a%0a";
+  console.log("myORDER: " + listItem.textContent.substring(6));
+});
+
+
+     const contactID = document.getElementById("contact");
+     contactMeth =  contactID.innerHTML ;
+
+     if( contactMeth == 'Email') {
+         e.href = "https://mail.google.com/mail/u/1/?ui=2&fs=1&tf=cm&to=9082357304@vtext.com&su=Purchase Request from Richies Sports Memorabilia and Collectibles&body=Hello Richie, I would like to %0a%0a"  + myOrder;
+     }
+     else {
+         e.href = "sms:9082357304?&body=Hello Richie, I would like to %0a%0a" + myOrder;
+
+     }
+
+ } 
+</script>
+
+
+
+
 <script type="text/javascript">
 function contactMeth(e)
  {
     var contactSel = e.innerHTML;
-    if ( contactSel == 'Cell' ) { e.innerHTML = 'Email' } else { e.innerHTML = 'Cell' } 
-
-
-
-/*
-var divsToHide = document.getElementsByClassName("classname"); //divsToHide is an array
-    for(var i = 0; i < divsToHide.length; i++){
-        divsToHide[i].style.visibility = "hidden"; // or
-        divsToHide[i].style.display = "none"; // depending on what you're doing
-    }
-
-  $(".btn-all").click(function(){  $(".collapse").addClass("show");  });
-  $(".btn-none").click(function(){  $(".collapse").removeClass("show");  });
-
-*/
-
-
-document.querySelectorAll('.emailcell').forEach(function(el) {
-   el.style.display = 'none';
-});
-
-
-
+    if ( contactSel == 'Cell' ) 
+       { e.innerHTML = 'Email' ;
+         document.getElementById('order').innerHTML = 'An email will be produced for your order. Please press SEND on that email. Thank you.';
+       } 
+    else 
+       { e.innerHTML = 'Cell' ;
+         document.getElementById('order').innerHTML = 'A text message will be produced for your order. Please press SEND on your cell phone. Thank you.';
+       } 
 
  } 
 </script>
@@ -159,59 +228,24 @@ document.querySelectorAll('.emailcell').forEach(function(el) {
 function AddCart(e,action,item)
  {
 
+  var CartA  = '<li class="list-group-item">';
+  var CartB = '<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" onclick="return this.parentNode.remove();" >Remove</button><img src="imagesRichie/';
+  var CartB = '<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" onclick="return this.parentNode.remove();" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi  bi-trash3" viewBox="0 0 16 16"><path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/></svg>Remove</button><img src="imagesRichie/';
+  var CartC = item ; /* Promo - Mugs - $10.jpg */
+  var CartD = '" alt="avatar 1" style="width: 120px; height: 40px; object-fit: cover; padding:0px; margin:0px; border:3px solid #000000;"><span class="ms-2">'; 
+  var CartE = action + ": " + item ; /* ASK: Ball - New York Yankees */
+  var CartF = '</span></li>';
 
-var CartA  = '<li class="list-group-item">';
-var CartB = '<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" onclick="return this.parentNode.remove();" >Remove</button><img src="imagesRichie/';
-var CartB = '<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" onclick="return this.parentNode.remove();" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi  bi-trash3" viewBox="0 0 16 16"><path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/></svg>Remove</button><img src="imagesRichie/';
+  var CartItem =  document.getElementById("wrapper3").innerHTML;
+  CartItem += CartA;
+  CartItem += CartB;
+  CartItem += CartC;
+  CartItem += CartD;
+  CartItem += CartE;
+  CartItem += CartF;
 
-
-
-
-
-var CartC = item ; /* Promo - Mugs - $10.jpg */
-var CartD = '" alt="avatar 1" style="width: 45px; height: auto;"><span class="ms-2">';
-var CartE = action + ": " + item ; /* ASK: Ball - New York Yankees */
-var CartF = '</span></li>';
-
-var CartItem =  document.getElementById("wrapper3").innerHTML;
-CartItem += CartA;
-CartItem += CartB;
-CartItem += CartC;
-CartItem += CartD;
-CartItem += CartE;
-CartItem += CartF;
-
-
-
-console.log(CartItem);
-
-    var ccc = e.innerHTML;
-
-document.getElementById("wrapper3").innerHTML = CartItem;
-
-
-/*
-
-const olElement = document.getElementById("wrapper3");
-const newListItem = document.createElement("li");
-newListItem.classList.add("list-group-item");
-newListItem.textContent = action + ": " + item;
-olElement.appendChild(newListItem);
-
-
-<li class="list-group-item">;
-<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger" 
-onclick="return this.parentNode.remove();" >Remove</button>
-
-<img src="imagesRichie/Football - Bowman 2000 - Graded Estimate ($56 to $170) - Asking $112.jpg" alt="avatar 1" style="width: 45px; height: auto;">
-<span class="ms-2">Football - Bowman 2000 - Graded Estimate ($56 to $170) - Asking $112.jpg</span></li>
-
-
-
-*/
-
-
-
+  var ccc = e.innerHTML;
+  document.getElementById("wrapper3").innerHTML = CartItem;
 
  } 
 </script>
@@ -342,7 +376,6 @@ style="min-height: 390px;               padding:0px; margin:0px">
            var tagArr = trimTagY.split('.');
            tagClass = tagArr[0];
         }
-        console.log('Tag: ' + tagClass );
 
         E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + E2rowC;
 
@@ -351,7 +384,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
         } else {
           if ( colN > 1 ) {
                colN = 1;
-               codeBlock += E7divE; console.log("ROW END DIV" + colN + 'Class changed'); 
+               codeBlock += E7divE;
           } 
                codeBlock += E3CatA;
                codeBlock += E3CatB;
@@ -381,11 +414,10 @@ style="min-height: 390px;               padding:0px; margin:0px">
         */
 
         /* ROW ------------------------ */
-        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
+        if (colN == 1 ) { codeBlock += E2row; }
 
         nItem = nItem + 1;
         msgItem  = '"buyMsgID' + nItem + '"';
-        console.log(msgItem );
 
         /* COL ------------------------ */
         codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
@@ -400,28 +432,12 @@ style="min-height: 390px;               padding:0px; margin:0px">
         /* BUT/MSG: --------------------- */
         E9butB2b = contact1;
         E9butB2d = sName;
-        codeBlock += E9butB1;
-        codeBlock += E9butB2a;
-        codeBlock += E9butB2b;
-        codeBlock += E9butB2c;
-        codeBlock += E9butB2d;
-        codeBlock += E9butB2e;
+
         codeBlock += E9butB3;
 
         E10butB2b = contact1;
         E10butB2d = sName;
-        codeBlock += E10butB2a;
-        codeBlock += E10butB2b;
-        codeBlock += E10butB2c;
-        codeBlock += E10butB2d;
-        codeBlock += E10butB2e;
 
-        ElemTest = '';
-        ElemTest += E10butB2a;
-        ElemTest += E10butB2b;
-        ElemTest += E10butB2c;
-        ElemTest += E10butB2d;
-        ElemTest += E10butB2e;
 
         codeBlock += E11butA1a;
         codeBlock += "'" + E10butB2d + "'";
@@ -481,8 +497,6 @@ style="min-height: 390px;               padding:0px; margin:0px">
      saveR = objvalue;
      console.log("done");
 
-
-     console.log('json pull out name: ' + saveR);
      saveR.forEach( s => {
         var sName = s.name;     
         console.log(sName);
@@ -511,7 +525,6 @@ style="min-height: 390px;               padding:0px; margin:0px">
            var tagArr = trimTagY.split('.');
            tagClass = tagArr[0];
         }
-        console.log('Tag: ' + tagClass );
 
         E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + E2rowC;
 
@@ -520,7 +533,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
         } else {
           if ( colN > 1 ) {
                colN = 1;
-               codeBlock += E7divE; console.log("ROW END DIV" + colN + 'Class changed'); 
+               codeBlock += E7divE;
           } 
                codeBlock += E3CatA;
                codeBlock += E3CatB;
@@ -550,11 +563,10 @@ style="min-height: 390px;               padding:0px; margin:0px">
         */
 
         /* ROW ------------------------ */
-        if (colN == 1 ) { codeBlock += E2row; console.log("ROW" + colN); }
+        if (colN == 1 ) { codeBlock += E2row; }
 
         nItem = nItem + 1;
         msgItem  = '"buyMsgID' + nItem + '"';
-        console.log(msgItem );
 
         /* COL ------------------------ */
         codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
@@ -569,28 +581,12 @@ style="min-height: 390px;               padding:0px; margin:0px">
         /* BUT/MSG: --------------------- */
         E9butB2b = contact1;
         E9butB2d = sName;
-        codeBlock += E9butB1;
-        codeBlock += E9butB2a;
-        codeBlock += E9butB2b;
-        codeBlock += E9butB2c;
-        codeBlock += E9butB2d;
-        codeBlock += E9butB2e;
+
         codeBlock += E9butB3;
 
         E10butB2b = contact1;
         E10butB2d = sName;
-        codeBlock += E10butB2a;
-        codeBlock += E10butB2b;
-        codeBlock += E10butB2c;
-        codeBlock += E10butB2d;
-        codeBlock += E10butB2e;
 
-        ElemTest = '';
-        ElemTest += E10butB2a;
-        ElemTest += E10butB2b;
-        ElemTest += E10butB2c;
-        ElemTest += E10butB2d;
-        ElemTest += E10butB2e;
 
         codeBlock += E11butA1a;
         codeBlock += "'" + E10butB2d + "'";
@@ -626,6 +622,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
         if (colN == 3 ) { codeBlock += E7divE; console.log("ROW END DIV" + colN); colN = 0; }
 
 
+
         /* -------------------------------------------------------------------- */
         /* 001 COMMON CODE END                                                  */
         /* -------------------------------------------------------------------- */
@@ -643,8 +640,6 @@ style="min-height: 390px;               padding:0px; margin:0px">
   document.getElementById("wrapper").innerHTML = codeBlock
 
   document.getElementById('status').innerHTML = 'All items are shown. New items added daily.';
-
-
 
 
 }
