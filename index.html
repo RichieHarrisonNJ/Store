@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! version 1.8 1222u 450pm -->
+    <! version 1.0 1222u 650pm -->
 
     <meta charset="utf-8">
 
@@ -19,14 +19,16 @@
 <body style="background-color:#a56ca7; overscroll-behavior-y:none; " onload = "windowLoaded();" >
 
 <h3 class="text-center">Richie's Sports Memorabilia and Collectibles - Manalapan NJ (TEST version)</h3>
-
-
+<p  class="text-center bd-highlight font-weight-bolder" style="padding:0px; margin:0px">Contact Richie by text: 732-619-9014 or email: 7326199014@vtext.com</p>
 
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
 <div class="cc" >
 
-   <div class="card card-body BUTTONS" style="background-color:#feeb10; padding:5px;">
+   <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
       <div class="dropdown">
+
+          <a type="button" class="btn border border-light btn-primary btn-none  role="button" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+          </svg>Cart</a>
 
          <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
          <button class="btn border border-light btn-primary btn-all"  type= "button">All</button>
@@ -36,14 +38,6 @@
          <button class="btn border border-light btn-primary btn-Football"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Football"   aria-controls = ".multi-collapse-Football"   >Football</button>
          <button class="btn border border-light btn-primary btn-NonSports"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-NonSports"  aria-controls = ".multi-collapse-NonSports"  >NonSports</button>
          <button class="btn border border-light btn-primary btn-Special"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Special"    aria-controls = ".multi-collapse-Special"    >Special </button>
-
-         <span class="text-nowrap bd-highlight font-weight-bolder">Checkout:</span>
-         <button class="btn border border-light btn-primary btn-none" type= "button">Cart</button>
-
-         <br>
-         <span class="bd-highlight font-weight-bolder">Contact Richie by text: 732-619-9014 or email: 7326199014@vtext.com</span>
-         <button type= "button" class="btn border border-light btn-primary btn-none" id="contact" onclick="contactMeth(this);">Cell</button>
-
          <label id="status">Item list in progress...</label>
 
 
@@ -95,7 +89,10 @@
     <div class="row mr-auto container-fluid collapseX ccX multi-collapse-Cart .multi-collapse-Cart show" >
        <div class="card card-body " style="background-color:#feeb10; padding:5px;">
        <div class="dropdown">
-          <a type="button" class="btn border border-light btn-primary btn-none  role="button" href="#" onclick="sendOrder(this)">Checkout</a> 
+          By<button type= "button" class="btn border border-light btn-primary btn-none" id="contact" onclick="contactMeth(this);">Cell</button>
+          <a type="button" class="btn border border-light btn-primary btn-none  role="button" href="#" onclick="sendOrder(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+</svg>Checkout</a> 
           <label id="order" class="text-nowrap"  >An email will be produced for your order. Please press SEND on that email. Thank you.</label> 
       </div>
       </div>
@@ -115,7 +112,7 @@
 
     <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
         <div class="text-center">                                                                    Website designed by 
-        <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.8)</a>
+        <a target="_blank" href="mailto:JohnnyM78.NJ@gmail.com"                                     >John Meistrell NJ (Ver1.0)</a>
        </div>
     </div>
 
@@ -407,7 +404,7 @@ style="min-height: 390px;               padding:0px; margin:0px">
         E9butB2b = contact1;
         E9butB2d = sName;
 
-        codeBlock += E9butB3;
+        
 
         E10butB2b = contact1;
         E10butB2d = sName;
@@ -428,7 +425,9 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E11butB1e;
         codeBlock += E11butB1f;
 
-        codeBlock += E11butC1a;
+        codeBlock += E9butB3;
+
+        /*       codeBlock += E11butC1a; */
 
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
@@ -556,11 +555,8 @@ style="min-height: 390px;               padding:0px; margin:0px">
         E9butB2b = contact1;
         E9butB2d = sName;
 
-        codeBlock += E9butB3;
-
         E10butB2b = contact1;
         E10butB2d = sName;
-
 
         codeBlock += E11butA1a;
         codeBlock += "'" + E10butB2d + "'";
@@ -577,7 +573,9 @@ style="min-height: 390px;               padding:0px; margin:0px">
         codeBlock += E11butB1e;
         codeBlock += E11butB1f;
 
-        codeBlock += E11butC1a;
+        codeBlock += E9butB3;
+
+        /* codeBlock += E11butC1a; */
 
         E9butBM  =       '<label id=' + msgItem  + '></label>';
         codeBlock += E9butBM;
